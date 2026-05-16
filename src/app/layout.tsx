@@ -4,7 +4,9 @@ import { Header } from "@/components/layout/Header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL(
+    "https://trade-site-2e8cnsy0m-wangxunyus-projects.vercel.app",
+  ),
   title: {
     default: "Global Trade Products | Manufacturer & Export Supplier",
     template: "%s | Global Trade Products",
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     title: "Global Trade Products | Manufacturer & Export Supplier",
     description:
       "Export-ready products with clear specifications and direct sales contact.",
-    url: "https://example.com",
+    url: "https://trade-site-2e8cnsy0m-wangxunyus-projects.vercel.app",
     siteName: "Global Trade Products",
     locale: "en_US",
     type: "website",
