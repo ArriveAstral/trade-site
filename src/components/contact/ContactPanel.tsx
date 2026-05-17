@@ -1,4 +1,5 @@
 import { company } from "@/data/company";
+import Image from 'next/image'
 
 type ContactPanelProps = {
   productName?: string;
@@ -37,7 +38,10 @@ export function ContactPanel({ productName }: ContactPanelProps) {
       <div className="mt-6">
         <p className="text-sm font-medium text-slate-700">WeChat QR Code</p>
         <div className="mt-3 flex aspect-square w-36 items-center justify-center rounded-md border border-dashed border-slate-300 bg-slate-50 text-center text-xs text-slate-500">
-          Add QR image to public/images/contact/wechat-qr.jpg
+            <Image  src="/images/contact/wechat-qr.jpg"
+                    alt="WeChat QR"
+                    width={300}
+                    height={300}></Image>
         </div>
       </div>
     </div>
