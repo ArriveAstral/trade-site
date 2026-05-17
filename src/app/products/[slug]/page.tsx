@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/common/Container";
 import { ContactPanel } from "@/components/contact/ContactPanel";
@@ -10,6 +11,13 @@ type ProductDetailPageProps = {
   params: Promise<{
     slug: string;
   }>;
+};
+
+const categoryDir: Record<string, string> = {
+  "Bread Toasters": "bread-toasters",
+  "Breakfast Makers": "breakfast-makers",
+  "Coffee Machines": "coffee-machines",
+  "Microwave Ovens": "microwave-ovens",
 };
 
 export function generateStaticParams() {
@@ -55,18 +63,29 @@ export default async function ProductDetailPage({
     notFound();
   }
 
+  const imageDir = categoryDir[product.category] ?? product.category.toLowerCase().replace(/\s+/g, "-");
+
   return (
     <Container className="py-10 lg:py-14">
       <Link
         href="/products"
         className="text-sm font-medium text-blue-700 hover:underline"
       >
-        Back to products
+        &larr; Back to products
       </Link>
 
       <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_380px]">
         <article>
-          <div className="aspect-[4/3] rounded-lg border border-slate-200 bg-slate-100" />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+            <Image
+              src={`/images/products/${imageDir}/${product.slug}.svg`}
+              alt={product.name}
+              fill
+              className="object-contain p-6"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              priority
+            />
+          </div>
           <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-blue-700">
             {product.category}
           </p>
