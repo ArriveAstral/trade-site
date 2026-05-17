@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { ProductCard } from "@/components/product/ProductCard";
+import { company } from "@/data/company";
 import { featuredProducts } from "@/data/products";
 
 export default function Home() {
@@ -14,12 +15,12 @@ export default function Home() {
               Export-ready product showcase
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              Industrial products for overseas buyers and distributors.
+              Small home appliances for overseas buyers and distributors.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Placeholder company introduction for the first version. Present
-              your core products, quality capability, and direct sales contact
-              in one clear browsing experience.
+              {company.englishName} supplies bread toasters, breakfast makers,
+              coffee machines, and microwave ovens for export appliance
+              programs.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link

@@ -111,6 +111,22 @@ export default async function ProductDetailPage({
               ))}
             </ul>
           </section>
+
+          <section className="mt-10">
+            <h2 className="text-xl font-semibold text-slate-950">
+              Applications
+            </h2>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              {product.applications.map((application) => (
+                <li
+                  key={application}
+                  className="rounded-md border border-slate-200 bg-white p-4 text-sm text-slate-700"
+                >
+                  {application}
+                </li>
+              ))}
+            </ul>
+          </section>
         </article>
 
         <aside>

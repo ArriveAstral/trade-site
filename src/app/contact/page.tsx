@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/common/Container";
 import { ContactPanel } from "@/components/contact/ContactPanel";
+import { company } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -16,20 +17,19 @@ export default function ContactPage() {
           Contact
         </p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-          Contact our sales team
+          Contact {company.name}
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-          Placeholder contact page for overseas product inquiries. Add your
-          business email, WhatsApp number, WeChat QR code, office address, and
-          business hours here.
+          {company.description} Send us your target model, order quantity,
+          destination market, and packaging requirements for a quotation.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {[
-            ["Email", "sales@example.com"],
-            ["WhatsApp", "+1 234 567 8900"],
-            ["Address", "Export office address placeholder"],
-            ["Response time", "Within 24 hours on business days"],
+            ["Email", company.email],
+            ["WhatsApp", company.whatsapp],
+            ["Address", company.address],
+            ["Response time", company.responseTime],
           ].map(([label, value]) => (
             <div key={label} className="rounded-lg bg-white p-5 shadow-sm">
               <p className="text-sm font-medium text-slate-500">{label}</p>
