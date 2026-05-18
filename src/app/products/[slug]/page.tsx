@@ -69,14 +69,14 @@ export default async function ProductDetailPage({
     <Container className="py-10 lg:py-14">
       <Link
         href="/products"
-        className="text-sm font-medium text-blue-700 hover:underline"
+        className="text-sm font-medium text-accent hover:underline"
       >
         &larr; Back to products
       </Link>
 
       <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_380px]">
         <article>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-surface">
             <Image
               src={`/images/products/${imageDir}/${product.slug}.svg`}
               alt={product.name}
@@ -86,30 +86,30 @@ export default async function ProductDetailPage({
               priority
             />
           </div>
-          <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-blue-700">
+          <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-accent">
             {product.category}
           </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
             {product.name}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-gray-500">
             {product.description}
           </p>
 
           <section className="mt-10">
-            <h2 className="text-xl font-semibold text-slate-950">
+            <h2 className="text-xl font-semibold text-gray-900">
               Key Specifications
             </h2>
-            <dl className="mt-4 divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white">
+            <dl className="mt-4 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white">
               {product.specs.map((spec) => (
                 <div
                   key={spec.label}
                   className="grid gap-2 px-4 py-3 sm:grid-cols-3"
                 >
-                  <dt className="text-sm font-medium text-slate-500">
+                  <dt className="text-sm font-medium text-gray-400">
                     {spec.label}
                   </dt>
-                  <dd className="text-sm text-slate-900 sm:col-span-2">
+                  <dd className="text-sm text-gray-700 sm:col-span-2">
                     {spec.value}
                   </dd>
                 </div>
@@ -118,12 +118,12 @@ export default async function ProductDetailPage({
           </section>
 
           <section className="mt-10">
-            <h2 className="text-xl font-semibold text-slate-950">Features</h2>
+            <h2 className="text-xl font-semibold text-gray-900">Features</h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {product.features.map((feature) => (
                 <li
                   key={feature}
-                  className="rounded-md border border-slate-200 bg-white p-4 text-sm text-slate-700"
+                  className="rounded-md border border-gray-200 bg-white p-4 text-sm text-gray-600"
                 >
                   {feature}
                 </li>
@@ -132,14 +132,14 @@ export default async function ProductDetailPage({
           </section>
 
           <section className="mt-10">
-            <h2 className="text-xl font-semibold text-slate-950">
+            <h2 className="text-xl font-semibold text-gray-900">
               Applications
             </h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {product.applications.map((application) => (
                 <li
                   key={application}
-                  className="rounded-md border border-slate-200 bg-white p-4 text-sm text-slate-700"
+                  className="rounded-md border border-gray-200 bg-white p-4 text-sm text-gray-600"
                 >
                   {application}
                 </li>

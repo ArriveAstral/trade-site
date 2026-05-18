@@ -18,8 +18,8 @@ function getImagePath(category: string): string {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <article className="flex h-full flex-col rounded-lg border border-slate-200 bg-white shadow-sm">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg bg-slate-50">
+    <article className="flex h-full flex-col rounded-lg border border-gray-200 bg-white transition hover:shadow-md">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg bg-surface">
         <Image
           src={`${getImagePath(product.category)}/${product.slug}.svg`}
           alt={product.name}
@@ -29,18 +29,18 @@ export function ProductCard({ product }: ProductCardProps) {
         />
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-xs font-semibold uppercase tracking-wide text-blue-700">
+        <p className="text-xs font-semibold uppercase tracking-wide text-accent">
           {product.category}
         </p>
-        <h3 className="mt-2 text-lg font-semibold text-slate-950">
+        <h3 className="mt-2 text-lg font-semibold text-gray-900">
           {product.name}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
+        <p className="mt-3 flex-1 text-sm leading-6 text-gray-500">
           {product.summary}
         </p>
         <Link
           href={`/products/${product.slug}`}
-          className="mt-5 text-sm font-semibold text-blue-700 hover:underline"
+          className="mt-5 text-sm font-semibold text-accent hover:underline"
         >
           View details
         </Link>

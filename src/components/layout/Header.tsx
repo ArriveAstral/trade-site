@@ -15,9 +15,9 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-gray-200 bg-white/95 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="text-base font-semibold text-slate-950">
+        <Link href="/" className="text-base font-semibold text-gray-900">
           Global Trade Products
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -25,7 +25,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-slate-600 transition hover:text-slate-950"
+              className="text-sm font-medium text-gray-500 transition hover:text-gray-900"
             >
               {item.label}
             </Link>
@@ -34,13 +34,13 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="hidden h-10 items-center justify-center rounded-md bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-slate-800 sm:inline-flex"
+            className="hidden h-10 items-center justify-center rounded-md bg-accent px-4 text-sm font-semibold text-white transition hover:bg-accent-hover sm:inline-flex"
           >
             Inquiry
           </Link>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-300 text-slate-900 transition hover:bg-slate-50 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-300 text-gray-800 transition hover:bg-surface md:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
@@ -58,14 +58,14 @@ export function Header() {
       {isMenuOpen ? (
         <nav
           id="mobile-navigation"
-          className="border-t border-slate-200 bg-white md:hidden"
+          className="border-t border-gray-200 bg-white md:hidden"
         >
           <Container className="grid gap-1 py-3">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 hover:text-slate-950"
+                className="rounded-md px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-surface hover:text-gray-900"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
@@ -73,7 +73,7 @@ export function Header() {
             ))}
             <Link
               href="/contact"
-              className="mt-2 inline-flex h-10 items-center justify-center rounded-md bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="mt-2 inline-flex h-10 items-center justify-center rounded-md bg-accent px-4 text-sm font-semibold text-white transition hover:bg-accent-hover"
               onClick={() => setIsMenuOpen(false)}
             >
               Inquiry

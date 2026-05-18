@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
-import { ProductCard } from "@/components/product/ProductCard";
+import { ProductList } from "@/components/product/ProductList";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
@@ -16,12 +16,10 @@ export default function ProductsPage() {
       <SectionHeading
         eyebrow="Product catalog"
         title="Products"
-        description="A clean product list page prepared for future filters, categories, and backend content management."
+        description="Browse our product lines by category. Click a tab below to filter."
       />
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((product) => (
-          <ProductCard key={product.slug} product={product} />
-        ))}
+      <div className="mt-8">
+        <ProductList products={products} />
       </div>
     </Container>
   );
