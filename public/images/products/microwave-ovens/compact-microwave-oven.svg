@@ -1,6 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="#FAFAFA"/>
-<ellipse cx="200" cy="275" rx="100" ry="5" fill="rgba(0,0,0,0.07)"/>
-<rect x="90" y="80" width="220" height="150" rx="6" fill="#E8E8E8" stroke="#D0D0D0" stroke-width="0.5"/>
-<rect x="98" y="88" width="130" height="134" rx="5" fill="#C8C8C8" opacity="0.35"/>
-<rect x="230" y="88" width="72" height="134" rx="4" fill="#B8B8B8" opacity="0.25"/>
-<circle cx="260" cy="150" r="10" fill="#888" opacity="0.35"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" width="640" height="500">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a3a3e"/><stop offset="40%" stop-color="#2a2a2e"/><stop offset="80%" stop-color="#222226"/><stop offset="100%" stop-color="#1a1a1e"/>
+    </linearGradient>
+    <linearGradient id="doorGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(15,15,20,0.7)"/><stop offset="50%" stop-color="rgba(10,10,15,0.82)"/><stop offset="100%" stop-color="rgba(20,20,25,0.75)"/>
+    </linearGradient>
+    <linearGradient id="interior" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3a3a"/><stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ccc"/><stop offset="30%" stop-color="#eee"/><stop offset="50%" stop-color="#aaa"/><stop offset="100%" stop-color="#777"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="40%" stop-color="rgba(255,255,255,0)"/><stop offset="48%" stop-color="rgba(255,255,255,0.1)"/><stop offset="52%" stop-color="rgba(255,255,255,0.1)"/><stop offset="60%" stop-color="rgba(255,255,255,0)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="drop" x="-6%" y="-2%" width="112%" height="114%"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.15"/></filter>
+    <filter id="soft" x="-8%" y="-4%" width="116%" height="116%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <ellipse cx="320" cy="445" rx="175" ry="13" fill="rgba(0,0,0,0.07)"/>
+  <rect x="155" y="415" width="14" height="7" rx="2.5" fill="#444"/>
+  <rect x="471" y="415" width="14" height="7" rx="2.5" fill="#444"/>
+
+  <rect x="145" y="130" width="350" height="290" rx="14" fill="url(#bodyGrad)" filter="url(#drop)"/>
+  <rect x="150" y="135" width="340" height="280" rx="10" fill="url(#sheen)" pointer-events="none"/>
+  <rect x="155" y="395" width="330" height="3" rx="1.5" fill="url(#chrome)" opacity="0.4"/>
+
+  <!-- Door window -->
+  <rect x="170" y="150" width="170" height="170" rx="6" fill="#111"/>
+
+  <!-- Interior -->
+  <rect x="175" y="155" width="160" height="130" rx="3" fill="url(#interior)"/>
+
+  <!-- Turntable -->
+  <ellipse cx="255" cy="268" rx="42" ry="7" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8">
+    <animateTransform attributeName="transform" type="rotate" from="0 255 268" to="360 255 268" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Plate on turntable -->
+  <g><animateTransform attributeName="transform" type="rotate" from="0 255 268" to="360 255 268" dur="10s" repeatCount="indefinite"/>
+  <ellipse cx="255" cy="265" rx="26" ry="4" fill="#ddd" opacity="0.4"/></g>
+
+  <!-- Door glass -->
+  <rect x="175" y="155" width="160" height="162" rx="3" fill="url(#doorGlass)"/>
+  <rect x="182" y="162" width="35" height="140" rx="2" fill="rgba(255,255,255,0.03)"/>
+
+  <!-- Door handle -->
+  <rect x="336" y="200" width="8" height="70" rx="3" fill="url(#chrome)"/>
+
+  <!-- Control panel -->
+  <rect x="355" y="150" width="120" height="200" rx="6" fill="#1a1a1e"/>
+
+  <!-- Mechanical timer dial -->
+  <circle cx="415" cy="190" r="28" fill="#333" filter="url(#soft)"/>
+  <circle cx="415" cy="190" r="22" fill="#3a3a3a"/>
+  <!-- Dial marks -->
+  <line x1="415" y1="172" x2="415" y2="178" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  <line x1="433" y1="180" x2="428" y2="185" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  <line x1="397" y1="180" x2="402" y2="185" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  <line x1="415" y1="208" x2="415" y2="202" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <!-- Pointer -->
+  <line x1="415" y1="190" x2="408" y2="178" stroke="#ddd" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="415" cy="190" r="5" fill="#555"/>
+
+  <!-- Power level dial -->
+  <circle cx="415" cy="270" r="22" fill="#333" filter="url(#soft)"/>
+  <circle cx="415" cy="270" r="16" fill="#3a3a3a"/>
+  <line x1="415" y1="256" x2="415" y2="261" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <line x1="429" y1="262" x2="425" y2="266" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <line x1="401" y1="262" x2="405" y2="266" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <line x1="415" y1="284" x2="415" y2="279" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <line x1="415" y1="270" x2="407" y2="262" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="415" cy="270" r="4" fill="#555"/>
+
+  <!-- Open button -->
+  <rect x="390" y="320" width="50" height="18" rx="4" fill="#333"/>
+  <text x="415" y="334" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" font-weight="600" fill="#aaa">OPEN</text>
+
+  <!-- LED -->
+  <circle cx="415" cy="350" r="3" fill="#3cb878"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"/></circle>
+
+  <text x="255" y="405" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="500" letter-spacing="3" fill="#777">COMPACT</text>
+</svg>

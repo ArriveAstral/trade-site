@@ -1,6 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="#FAFAFA"/>
-<ellipse cx="200" cy="275" rx="100" ry="5" fill="rgba(0,0,0,0.07)"/>
-<rect x="90" y="80" width="220" height="150" rx="6" fill="#E8E8E8" stroke="#D0D0D0" stroke-width="0.5"/>
-<rect x="98" y="88" width="130" height="134" rx="5" fill="#C8C8C8" opacity="0.35"/>
-<rect x="230" y="88" width="72" height="134" rx="4" fill="#B8B8B8" opacity="0.25"/>
-<circle cx="260" cy="150" r="10" fill="#888" opacity="0.35"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" width="640" height="500">
+  <defs>
+    <linearGradient id="steelFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#aaa"/><stop offset="30%" stop-color="#ccc"/><stop offset="50%" stop-color="#999"/><stop offset="100%" stop-color="#777"/>
+    </linearGradient>
+    <linearGradient id="doorGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(15,15,20,0.65)"/><stop offset="50%" stop-color="rgba(8,8,12,0.8)"/><stop offset="100%" stop-color="rgba(18,18,22,0.72)"/>
+    </linearGradient>
+    <linearGradient id="interior" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3a3a"/><stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ccc"/><stop offset="30%" stop-color="#eee"/><stop offset="50%" stop-color="#aaa"/><stop offset="100%" stop-color="#777"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="40%" stop-color="rgba(255,255,255,0)"/><stop offset="48%" stop-color="rgba(255,255,255,0.1)"/><stop offset="52%" stop-color="rgba(255,255,255,0.1)"/><stop offset="60%" stop-color="rgba(255,255,255,0)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="drop" x="-4%" y="-2%" width="108%" height="112%"><feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.12"/></filter>
+    <filter id="soft" x="-8%" y="-4%" width="116%" height="116%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <!-- Cabinet background hint -->
+  <rect x="60" y="60" width="520" height="400" rx="4" fill="#f0ebe2" opacity="0.3"/>
+
+  <!-- Trim frame (outer) -->
+  <rect x="80" y="80" width="480" height="370" rx="8" fill="url(#steelFrame)" filter="url(#drop)"/>
+
+  <!-- Inner body -->
+  <rect x="95" y="95" width="450" height="340" rx="6" fill="#2a2a2e"/>
+
+  <!-- Sheen on frame -->
+  <rect x="85" y="85" width="470" height="360" rx="6" fill="url(#sheen)" pointer-events="none"/>
+
+  <!-- Door window -->
+  <rect x="115" y="115" width="220" height="270" rx="6" fill="#111"/>
+
+  <!-- Interior -->
+  <rect x="122" y="122" width="206" height="200" rx="4" fill="url(#interior)"/>
+
+  <!-- Turntable -->
+  <ellipse cx="225" cy="300" rx="50" ry="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8">
+    <animateTransform attributeName="transform" type="rotate" from="0 225 300" to="360 225 300" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+  <g><animateTransform attributeName="transform" type="rotate" from="0 225 300" to="360 225 300" dur="10s" repeatCount="indefinite"/>
+  <ellipse cx="225" cy="297" rx="30" ry="5" fill="#ddd" opacity="0.4"/></g>
+
+  <!-- Door glass -->
+  <rect x="122" y="122" width="206" height="260" rx="4" fill="url(#doorGlass)"/>
+  <rect x="130" y="130" width="40" height="235" rx="3" fill="rgba(255,255,255,0.035)"/>
+
+  <!-- Control panel -->
+  <rect x="350" y="115" width="180" height="300" rx="6" fill="#1a1a1e"/>
+
+  <!-- Digital display -->
+  <rect x="365" y="128" width="150" height="40" rx="5" fill="#0a0a0a"/>
+  <rect x="370" y="133" width="140" height="30" rx="3" fill="#1a2a1a"/>
+  <text x="440" y="155" text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold" fill="#4dff4d" opacity="0.9">08:00<animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/></text>
+  <text x="375" y="148" font-family="system-ui, sans-serif" font-size="7" fill="#2d7a2d">MICROWAVE</text>
+
+  <!-- Function buttons -->
+  <rect x="365" y="178" width="46" height="24" rx="4" fill="#444"/>
+  <text x="388" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#ccc">MW</text>
+  <rect x="416" y="178" width="46" height="24" rx="4" fill="#333"/>
+  <text x="439" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#888">GRILL</text>
+  <rect x="467" y="178" width="46" height="24" rx="4" fill="#333"/>
+  <text x="490" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#888">COMBI</text>
+
+  <rect x="365" y="208" width="46" height="22" rx="4" fill="#333"/>
+  <text x="388" y="224" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#888">DEFROST</text>
+  <rect x="416" y="208" width="46" height="22" rx="4" fill="#333"/>
+  <text x="439" y="224" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#888">AUTO</text>
+  <rect x="467" y="208" width="46" height="22" rx="4" fill="#333"/>
+  <text x="490" y="224" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#888">CLOCK</text>
+
+  <!-- Number pad -->
+  <rect x="365" y="240" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="405" y="240" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="445" y="240" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="365" y="264" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="405" y="264" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="445" y="264" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="365" y="288" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="405" y="288" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="445" y="288" width="36" height="20" rx="3" fill="#444"/>
+  <rect x="405" y="312" width="36" height="20" rx="3" fill="#444"/>
+
+  <!-- Start / Stop -->
+  <rect x="365" y="312" width="36" height="20" rx="3" fill="#2a5a3a"/>
+  <text x="383" y="327" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#7ec88a">▶</text>
+  <rect x="445" y="312" width="36" height="20" rx="3" fill="#5a2a2a"/>
+  <text x="463" y="327" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#e88">■</text>
+
+  <!-- Door handle -->
+  <rect x="328" y="240" width="8" height="80" rx="3" fill="url(#chrome)"/>
+
+  <!-- Bottom trim -->
+  <rect x="110" y="360" width="250" height="4" rx="2" fill="url(#chrome)" opacity="0.4"/>
+
+  <!-- LED indicators -->
+  <circle cx="375" cy="345" r="3" fill="#3cb878"><animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="395" cy="345" r="3" fill="#f0a030" opacity="0.4"/>
+  <text x="478" y="348" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#888">READY</text>
+
+  <!-- Vent slots at bottom of frame -->
+  <line x1="120" y1="375" x2="180" y2="375" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+  <line x1="120" y1="380" x2="170" y2="380" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
+
+  <text x="225" y="395" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="500" letter-spacing="3" fill="#888">BUILT-IN</text>
+</svg>

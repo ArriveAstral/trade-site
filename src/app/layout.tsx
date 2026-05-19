@@ -1,7 +1,32 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { JsonLd } from "@/components/common/JsonLd";
+import { company } from "@/data/company";
 import "./globals.css";
+
+const siteUrl = "https://trade-site-2e8cnsy0m-wangxunyus-projects.vercel.app";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: company.englishName,
+  url: siteUrl,
+  description: company.description,
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    email: company.email,
+    telephone: company.whatsapp,
+    availableLanguage: "English",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Shenzhen",
+    addressCountry: "CN",
+  },
+  sameAs: [`https://wa.me/${company.whatsappNumber}`],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -43,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <JsonLd data={organizationSchema} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

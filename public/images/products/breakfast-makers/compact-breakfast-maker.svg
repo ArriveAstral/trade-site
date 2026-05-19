@@ -1,5 +1,157 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="#FAFAFA"/>
-<ellipse cx="200" cy="278" rx="81" ry="6" fill="rgba(0,0,0,0.07)"/>
-<rect x="110" y="150" width="180" height="55" rx="5" fill="#E8E5DD" stroke="#D5D2CA" stroke-width="0.5"/>
-<rect x="128" y="95" width="144" height="55" rx="6" fill="#B0AFA5" opacity="0.4"/>
-<rect x="290" y="135" width="14" height="8" rx="4" fill="#666" opacity="0.35"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" width="640" height="500">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#faf7f2"/>
+      <stop offset="50%"  stop-color="#f2ede5"/>
+      <stop offset="100%" stop-color="#e8e2d8"/>
+    </linearGradient>
+    <linearGradient id="plateGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#3a3a3a"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#e8e4dc"/>
+      <stop offset="35%"  stop-color="#f5f2ec"/>
+      <stop offset="55%"  stop-color="#d0ccc4"/>
+      <stop offset="100%" stop-color="#b0aca4"/>
+    </linearGradient>
+    <radialGradient id="eggWhite" cx="0.45" cy="0.45" r="0.6">
+      <stop offset="0%"   stop-color="#fefefe"/>
+      <stop offset="100%" stop-color="#f0ece4"/>
+    </radialGradient>
+    <radialGradient id="eggYolk" cx="0.4" cy="0.35" r="0.5">
+      <stop offset="0%"   stop-color="#f9a825"/>
+      <stop offset="60%"  stop-color="#f57c00"/>
+      <stop offset="100%" stop-color="#e65100"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="rgba(255,255,255,0)"/>
+      <stop offset="45%"  stop-color="rgba(255,255,255,0)"/>
+      <stop offset="50%"  stop-color="rgba(255,255,255,0.3)"/>
+      <stop offset="55%"  stop-color="rgba(255,255,255,0)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4.5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="drop" x="-6%" y="-4%" width="112%" height="114%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.10"/>
+    </filter>
+    <filter id="soft" x="-8%" y="-4%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Floor shadow -->
+  <ellipse cx="320" cy="440" rx="190" ry="14" fill="rgba(0,0,0,0.07)"/>
+
+  <!-- Feet -->
+  <rect x="145" y="405" width="14" height="7" rx="2.5" fill="#a09890"/>
+  <rect x="481" y="405" width="14" height="7" rx="2.5" fill="#a09890"/>
+
+  <!-- Main body -->
+  <rect x="110" y="160" width="420" height="250" rx="28" fill="url(#bodyGrad)" filter="url(#drop)"/>
+
+  <!-- Bottom chrome accent -->
+  <rect x="120" y="380" width="400" height="5" rx="2" fill="url(#chrome)" opacity="0.5"/>
+
+  <!-- Sheen sweep -->
+  <rect x="115" y="165" width="410" height="240" rx="24" fill="url(#sheen)" pointer-events="none"/>
+
+  <!-- Top rim -->
+  <rect x="120" y="155" width="400" height="18" rx="7" fill="url(#chrome)" opacity="0.6"/>
+
+  <!-- Left: Cooking plate recess -->
+  <rect x="145" y="178" width="200" height="130" rx="10" fill="#1a1a1a"/>
+
+  <!-- Cooking plate surface -->
+  <rect x="153" y="185" width="184" height="116" rx="6" fill="url(#plateGrad)"/>
+
+  <!-- Heating ring on plate -->
+  <circle cx="245" cy="243" r="46" fill="none" stroke="#4a4a4a" stroke-width="1.3" opacity="0.5"/>
+
+  <!-- Fried egg -->
+  <g>
+    <path d="M225 218 Q210 232 218 252 Q226 268 248 264 Q272 260 274 240 Q276 222 262 216 Q248 210 225 218 Z" fill="url(#eggWhite)" filter="url(#soft)"/>
+    <path d="M225 218 Q220 224 218 234 Q216 246 222 254 Q230 262 244 264 Q258 264 266 256 Q274 248 274 238 Q274 226 266 220 Q256 214 244 214 Q234 214 225 218 Z" fill="none" stroke="rgba(200,180,150,0.25)" stroke-width="1"/>
+    <ellipse cx="248" cy="238" rx="14" ry="13" fill="url(#eggYolk)"/>
+    <ellipse cx="244" cy="233" rx="4.5" ry="3.5" fill="rgba(255,255,255,0.3)"/>
+  </g>
+
+  <!-- Right: warming / toast compartment -->
+  <rect x="365" y="178" width="130" height="130" rx="8" fill="#f0ebe2" stroke="#e0d8cd" stroke-width="1"/>
+
+  <!-- Small toast -->
+  <g>
+    <path d="M399 215 L399 188 Q399 166 415 164 Q431 166 431 188 L431 215 Z" fill="#e8c87a"/>
+    <path d="M399 188 Q415 164 431 188" fill="none" stroke="#d4a843" stroke-width="1.2" opacity="0.45"/>
+    <circle cx="410" cy="196" r="1" fill="#c49a3a" opacity="0.3"/>
+    <circle cx="421" cy="201" r="0.8" fill="#c49a3a" opacity="0.25"/>
+    <circle cx="416" cy="207" r="1.1" fill="#c49a3a" opacity="0.2"/>
+  </g>
+
+  <!-- Warming level bars -->
+  <rect x="380" y="285" width="8" height="3" rx="1" fill="#e07060" opacity="0.8"/>
+  <rect x="392" y="285" width="8" height="3" rx="1" fill="#e07060" opacity="0.55"/>
+  <rect x="404" y="285" width="8" height="3" rx="1" fill="#e07060" opacity="0.3"/>
+
+  <!-- Control panel -->
+  <rect x="150" y="322" width="340" height="44" rx="8" fill="rgba(0,0,0,0.025)"/>
+
+  <!-- Temp dial -->
+  <circle cx="210" cy="344" r="15" fill="#4a4a4a" filter="url(#soft)"/>
+  <circle cx="210" cy="344" r="9" fill="#5a5a5a"/>
+  <line x1="210" y1="344" x2="210" y2="336" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Timer dial -->
+  <circle cx="270" cy="344" r="15" fill="#4a4a4a" filter="url(#soft)"/>
+  <circle cx="270" cy="344" r="9" fill="#5a5a5a"/>
+  <line x1="270" y1="344" x2="270" y2="336" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Power button -->
+  <circle cx="340" cy="344" r="10" fill="#d9534f"/>
+  <circle cx="340" cy="344" r="6" fill="#e8655c"/>
+  <circle cx="338" cy="342" r="2.5" fill="rgba(255,255,255,0.25)"/>
+
+  <!-- LED indicator (breathing) -->
+  <circle cx="420" cy="344" r="4.5" fill="#3cb878">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="420" cy="344" r="8" fill="#3cb878" opacity="0.1">
+    <animate attributeName="opacity" values="0.03;0.16;0.03" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="7;12;7" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Heat shimmer above cooking plate -->
+  <g opacity="0.35">
+    <path d="M200 168 Q210 155 220 168" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.6;0" dur="2s" begin="0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="8 -14" dur="2s" begin="0s" repeatCount="indefinite"/>
+    </path>
+    <path d="M240 170 Q250 152 260 170" fill="none" stroke="#999" stroke-width="2.5" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.55;0" dur="2.3s" begin="0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-5 -16" dur="2.3s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M280 168 Q290 154 300 168" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="2.1s" begin="1.1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="6 -12" dur="2.1s" begin="1.1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M220 166 Q230 148 240 166" fill="none" stroke="#aaa" stroke-width="1.8" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.4;0" dur="2.5s" begin="1.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-3 -18" dur="2.5s" begin="1.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Steam wisps from warming side -->
+  <g opacity="0.3">
+    <path d="M420 168 Q418 150 422 132" fill="none" stroke="#bbb" stroke-width="2" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="2.8s" begin="0.3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-3 -16" dur="2.8s" begin="0.3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M430 165 Q432 148 428 130" fill="none" stroke="#bbb" stroke-width="1.8" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;0.45;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="4 -14" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Brand -->
+  <text x="320" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="3" fill="#c5bfb2">BREAKFAST</text>
+</svg>

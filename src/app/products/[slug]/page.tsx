@@ -3,7 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/common/Container";
+import { JsonLd } from "@/components/common/JsonLd";
 import { ContactPanel } from "@/components/contact/ContactPanel";
+import { company } from "@/data/company";
 import { products } from "@/data/products";
 import { getProductBySlug } from "@/lib/products";
 
@@ -65,9 +67,31 @@ export default async function ProductDetailPage({
 
   const imageDir = categoryDir[product.category] ?? product.category.toLowerCase().replace(/\s+/g, "-");
 
+  const siteUrl = "https://trade-site-2e8cnsy0m-wangxunyus-projects.vercel.app";
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: `${siteUrl}/images/products/${imageDir}/${product.slug}.svg`,
+    category: product.category,
+    manufacturer: {
+      "@type": "Organization",
+      name: company.englishName,
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+    },
+  };
+
   return (
-    <Container className="py-10 lg:py-14">
-      <Link
+    <>
+      <JsonLd data={productSchema} />
+      <Container className="py-10 lg:py-14">
+        <Link
         href="/products"
         className="text-sm font-medium text-accent hover:underline"
       >
@@ -153,5 +177,6 @@ export default async function ProductDetailPage({
         </aside>
       </div>
     </Container>
+    </>
   );
 }

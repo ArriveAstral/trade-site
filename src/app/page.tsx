@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { ProductCard } from "@/components/product/ProductCard";
-import { company } from "@/data/company";
+import { StatsPanel } from "@/components/home/StatsPanel";
 import { products, featuredProducts } from "@/data/products";
 
 const categoryBanners = (() => {
@@ -36,9 +36,9 @@ export default function Home() {
               Small home appliances for overseas buyers and distributors.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-500">
-              {company.englishName} supplies bread toasters, breakfast makers,
-              coffee machines, and microwave ovens for export appliance
-              programs.
+              We supply bread toasters, breakfast makers, coffee machines, and
+              microwave ovens — practical small appliances ready for export,
+              with flexible customization and responsive sales support.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -55,26 +55,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="rounded-lg border border-gray-200 bg-surface p-6">
-            <p className="text-sm font-medium text-gray-400">
-              Company Snapshot
-            </p>
-            <dl className="mt-6 grid grid-cols-2 gap-4">
-              {[
-                ["12+", "Core products"],
-                ["30+", "Export markets"],
-                ["OEM", "Customization"],
-                ["24h", "Sales response"],
-              ].map(([value, label]) => (
-                <div key={label} className="rounded-md bg-white p-4">
-                  <dt className="text-sm text-gray-400">{label}</dt>
-                  <dd className="mt-2 text-2xl font-semibold text-gray-900">
-                    {value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <StatsPanel />
         </Container>
       </section>
 
@@ -116,7 +97,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Core products"
             title="Featured Products"
-            description="Use this area to highlight the products that matter most for overseas inquiries."
+            description="Our most-requested small appliances across four categories — each model supports export packaging, private labeling, and spec adjustments for target markets."
           />
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {featuredProducts.map((product) => (
@@ -129,15 +110,23 @@ export default function Home() {
       <section className="bg-white">
         <Container className="grid gap-8 py-14 md:grid-cols-3">
           {[
-            "Clear product specifications",
-            "Direct WhatsApp and email inquiry",
-            "Mobile-first browsing experience",
+            {
+              title: "Clear Product Specifications",
+              desc: "Every product page lists key specs, features, and suggested applications — giving you the details needed for initial sourcing decisions without the back-and-forth.",
+            },
+            {
+              title: "Direct WhatsApp & Email Inquiry",
+              desc: "Reach our sales team directly via WhatsApp or email. We respond within 24 hours on business days with pricing, MOQ, and packaging options.",
+            },
+            {
+              title: "Mobile-First Browsing Experience",
+              desc: "Browse the full product range on any device. The site is optimized for mobile, so you can check specs and share product links with your team on the go.",
+            },
           ].map((item) => (
-            <div key={item} className="border-t border-gray-200 pt-5">
-              <h2 className="text-lg font-semibold text-gray-900">{item}</h2>
+            <div key={item.title} className="border-t border-gray-200 pt-5">
+              <h2 className="text-lg font-semibold text-gray-900">{item.title}</h2>
               <p className="mt-3 text-sm leading-6 text-gray-500">
-                Placeholder copy for company strengths, quality control,
-                packaging, delivery, and service capability.
+                {item.desc}
               </p>
             </div>
           ))}

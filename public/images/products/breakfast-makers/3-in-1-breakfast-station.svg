@@ -1,5 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="#FAFAFA"/>
-<ellipse cx="200" cy="278" rx="108" ry="6" fill="rgba(0,0,0,0.07)"/>
-<rect x="80" y="150" width="240" height="55" rx="5" fill="#E8E5DD" stroke="#D5D2CA" stroke-width="0.5"/>
-<rect x="104" y="95" width="192" height="55" rx="6" fill="#B0AFA5" opacity="0.4"/>
-<rect x="320" y="135" width="14" height="8" rx="4" fill="#666" opacity="0.35"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" width="640" height="500">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#faf7f2"/><stop offset="50%" stop-color="#f2ede5"/><stop offset="100%" stop-color="#e8e2d8"/>
+    </linearGradient>
+    <linearGradient id="plateGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3a3a"/><stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e4dc"/><stop offset="35%" stop-color="#f5f2ec"/><stop offset="55%" stop-color="#d0ccc4"/><stop offset="100%" stop-color="#b0aca4"/>
+    </linearGradient>
+    <radialGradient id="eggWhite" cx="0.45" cy="0.45" r="0.6"><stop offset="0%" stop-color="#fefefe"/><stop offset="100%" stop-color="#f0ece4"/></radialGradient>
+    <radialGradient id="eggYolk" cx="0.4" cy="0.35" r="0.5"><stop offset="0%" stop-color="#f9a825"/><stop offset="60%" stop-color="#f57c00"/><stop offset="100%" stop-color="#e65100"/></radialGradient>
+    <linearGradient id="coffeeCarafe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(60,35,15,0.45)"/><stop offset="50%" stop-color="rgba(35,18,8,0.6)"/><stop offset="100%" stop-color="rgba(55,32,14,0.45)"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="45%" stop-color="rgba(255,255,255,0)"/><stop offset="50%" stop-color="rgba(255,255,255,0.28)"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4.5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="drop" x="-6%" y="-2%" width="112%" height="112%"><feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.10"/></filter>
+    <filter id="soft" x="-8%" y="-4%" width="116%" height="116%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/></filter>
+  </defs>
+
+  <ellipse cx="320" cy="450" rx="220" ry="15" fill="rgba(0,0,0,0.07)"/>
+  <rect x="125" y="420" width="16" height="8" rx="3" fill="#a09890"/>
+  <rect x="499" y="420" width="16" height="8" rx="3" fill="#a09890"/>
+
+  <!-- Main body -->
+  <rect x="100" y="120" width="440" height="305" rx="24" fill="url(#bodyGrad)" filter="url(#drop)"/>
+  <rect x="110" y="395" width="420" height="5" rx="2" fill="url(#chrome)" opacity="0.5"/>
+  <rect x="108" y="125" width="424" height="295" rx="20" fill="url(#sheen)" pointer-events="none"/>
+
+  <!-- Top rim -->
+  <rect x="112" y="113" width="416" height="20" rx="6" fill="url(#chrome)" opacity="0.5"/>
+
+  <!-- Left: Griddle plate -->
+  <rect x="125" y="145" width="200" height="100" rx="8" fill="#1a1a1a"/>
+  <rect x="133" y="152" width="184" height="86" rx="4" fill="url(#plateGrad)"/>
+  <!-- Heating zone ring -->
+  <circle cx="210" cy="195" r="35" fill="none" stroke="#4a4a4a" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Egg on griddle -->
+  <g><path d="M197 183 Q185 194 190 210 Q196 222 212 220 Q226 218 228 206 Q230 190 222 184 Q212 178 197 183 Z" fill="url(#eggWhite)" filter="url(#soft)"/><ellipse cx="211" cy="199" rx="10" ry="9" fill="url(#eggYolk)"/><ellipse cx="208" cy="196" rx="3.5" ry="2.5" fill="rgba(255,255,255,0.3)"/></g>
+  <!-- Sausage -->
+  <rect x="245" y="180" width="40" height="14" rx="7" fill="#a0523d" opacity="0.8"/>
+  <rect x="248" y="183" width="34" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Right: Mini oven -->
+  <rect x="345" y="145" width="170" height="100" rx="8" fill="#1a1a1a"/>
+  <!-- Oven door -->
+  <rect x="355" y="158" width="150" height="80" rx="4" fill="#2a2a2a"/>
+  <!-- Oven glass -->
+  <rect x="362" y="165" width="136" height="58" rx="3" fill="rgba(15,15,18,0.7)"/>
+  <rect x="368" y="170" width="40" height="48" rx="2" fill="rgba(255,255,255,0.04)"/>
+  <!-- Toast inside -->
+  <rect x="395" y="195" width="50" height="6" rx="2" fill="#c4952e" opacity="0.5"/>
+  <!-- Oven handle -->
+  <rect x="405" y="235" width="50" height="7" rx="3" fill="url(#chrome)" filter="url(#soft)"/>
+
+  <!-- Bottom left: Coffee maker zone -->
+  <rect x="125" y="260" width="110" height="70" rx="6" fill="#e0dbd2" opacity="0.5"/>
+  <!-- Mini carafe -->
+  <path d="M155 330 L158 278 Q160 272 168 270 L192 270 Q200 272 202 278 L205 330 Z" fill="url(#coffeeCarafe)"/>
+  <path d="M162 330 L162 278 Q163 274 168 273 L175 273 L175 330 Z" fill="rgba(255,255,255,0.1)"/>
+  <ellipse cx="180" cy="270" rx="22" ry="3" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <path d="M205 288 Q215 286 216 290" fill="none" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+  <path d="M155 300 Q145 300 145 315 Q145 328 155 328" fill="none" stroke="#666" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Coffee drip -->
+  <ellipse cx="180" cy="285" rx="1.5" ry="2.5" fill="rgba(80,50,25,0.7)" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="1.3s" begin="0s" repeatCount="indefinite"/><animate attributeName="cy" values="280;295" dur="1.3s" begin="0s" repeatCount="indefinite"/></ellipse>
+  <ellipse cx="180" cy="285" rx="1.5" ry="2.5" fill="rgba(80,50,25,0.7)" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="1.2s" begin="0.5s" repeatCount="indefinite"/><animate attributeName="cy" values="280;295" dur="1.2s" begin="0.5s" repeatCount="indefinite"/></ellipse>
+
+  <!-- Controls -->
+  <rect x="255" y="260" width="260" height="70" rx="8" fill="rgba(0,0,0,0.025)"/>
+  <circle cx="285" cy="295" r="14" fill="#4a4a4a" filter="url(#soft)"/><circle cx="285" cy="295" r="8" fill="#5a5a5a"/><line x1="285" y1="295" x2="285" y2="288" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="340" cy="295" r="14" fill="#4a4a4a" filter="url(#soft)"/><circle cx="340" cy="295" r="8" fill="#5a5a5a"/><line x1="340" y1="295" x2="340" y2="288" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="400" cy="295" r="10" fill="#d9534f"/><circle cx="400" cy="295" r="6" fill="#e8655c"/><circle cx="398" cy="293" r="2" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="460" cy="295" r="4" fill="#3cb878"><animate attributeName="opacity" values="0.25;1;0.25" dur="2s" repeatCount="indefinite"/></circle>
+
+  <!-- Heat shimmer + steam -->
+  <g opacity="0.3">
+    <path d="M190 138 Q195 125 200 138" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.5;0" dur="1.8s" begin="0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="5 -10" dur="1.8s" begin="0s" repeatCount="indefinite"/></path>
+    <path d="M220 136 Q225 122 230 136" fill="none" stroke="#999" stroke-width="2.2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.55;0" dur="2s" begin="0.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="-4 -12" dur="2s" begin="0.5s" repeatCount="indefinite"/></path>
+    <path d="M410 146 Q412 134 415 146" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.45;0" dur="2.2s" begin="0.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="3 -11" dur="2.2s" begin="0.3s" repeatCount="indefinite"/></path>
+  </g>
+
+  <text x="320" y="255" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="500" letter-spacing="3" fill="#c5bfb2">3-IN-1 STATION</text>
+</svg>

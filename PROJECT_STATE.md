@@ -90,19 +90,57 @@ public/images/
 - `src/components/common/SectionHeading.tsx` — Eyebrow, title, description colors
 - `src/components/product/ProductCard.tsx` — Card border, image bg, category label, text, link, hover shadow
 
+### 2026-05-19 — 首页文案打磨 + 统计面板动效 + 全部产品图重绘
+
+**首页英文文案** (`src/app/page.tsx`):
+- Hero 描述：去掉公司名拼接，改为自然英文表达
+- Featured Products 描述：去掉 "Use this area to…" 占位符，替换为实际产品卖点
+- 三列优势区：三段 "Placeholder copy…" 替换为对应的具体描述
+
+**AnimatedCounter 组件** (`src/components/common/AnimatedCounter.tsx`):
+- 客户端组件，Intersection Observer 触发，只播一次
+- 解析 "12+" → 数字 12 + 后缀 "+"，"OEM" 直接显示
+- ease-out cubic 缓动，800ms 计数动画
+
+**StatsPanel 组件** (`src/components/home/StatsPanel.tsx`):
+- 替换 Home page Hero 中内联 Company Snapshot
+- 玻璃拟态卡片：`bg-white/70 backdrop-blur-md` + 淡红渐变装饰色块
+- 数字用 AnimatedCounter 渲染
+
+**产品图片全部重绘** (14 张 SVG，`public/images/products/`):
+- 暖白奶油系（面包机+早餐机 7 张）：暖白哑光机身 + 铬色装饰 + 面包/煎蛋/咖啡实物细节
+- 深色金属系（咖啡机+微波炉 7 张）：深灰/不锈钢机身 + 黑色面板
+- 统一 640×500 viewBox，带微动效（蒸汽飘升、热浪、咖啡滴落、烤管发光、转盘旋转、反光扫过、LED 呼吸）
+- 产品列表：2-Slice / 4-Slice / Digital Bread Toaster, Compact / 3-in-1 / Family Breakfast Maker, Drip / Capsule / Espresso / Commercial Coffee Maker, Compact / Digital / Grill / Built-in Microwave Oven
+
+**ProductList tab 按钮闪动修复** (`src/components/product/ProductList.tsx`):
+- `transition-all` → `transition-colors`，避免非颜色属性动画
+- active/inactive 状态统一 `font-medium`，消除字重跳变
+- active 按钮加 `border border-accent`，消除 border-width 0↔1px 跳变
+
+**JSON-LD 结构化数据**:
+- `src/components/common/JsonLd.tsx` — 通用 `<script type="application/ld+json">` 组件
+- `src/app/layout.tsx` — Organization schema (公司名、联系方式、地址)
+- `src/app/products/[slug]/page.tsx` — Product schema (品名、描述、图片、制造商、库存状态)
+
 ## Remaining Tasks
 
 ### 阻塞项（需真实数据，暂不处理）
 - [ ] 替换公司真实信息 (`data/company.ts`)
-- [ ] 替换真实产品数据和图片 (`data/products.ts`, `public/images/`)
 - [ ] 替换真实域名 (metadataBase, sitemap, robots)
 
 ### 可推进项
-- [x] 产品分类筛选（按 4 个品类过滤产品列表）
 - [ ] 404/500 错误页面 (`not-found.tsx`, `error.tsx`)
-- [ ] JSON-LD 结构化数据 (Product, Organization schema)
-- [ ] 打磨首页英文文案（去掉 Placeholder 占位文字）
 - [ ] 独立分类页 (`/products/bread-toasters` 等)
+- [x] JSON-LD 结构化数据 (Organization + Product schema)
+- [x] 打磨首页英文文案
+- [x] 全部产品图片（14 张 SVG 重绘完成，不再使用占位图）
+- [x] 首页 Company Snapshot 数字动画 + 玻璃卡片
+- [x] 产品分类筛选（按 4 个品类过滤产品列表）
+
+### 阻塞项（需真实数据，暂不处理）
+- [ ] 替换公司真实信息 (`data/company.ts`)
+- [ ] 替换真实域名 (metadataBase, sitemap, robots)
 
 ## Design Decisions
 

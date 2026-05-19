@@ -45,8 +45,8 @@ export function ProductList({ products }: ProductListProps) {
             onClick={() => setActive(cat)}
             className={
               active === cat
-                ? "inline-flex h-10 items-center justify-center rounded-md bg-accent px-4 text-sm font-semibold text-white transition-all duration-300 active:scale-95 sm:w-auto"
-                : "inline-flex h-10 items-center justify-center rounded-md border border-gray-300 bg-white px-4 text-sm font-medium text-gray-600 transition-all duration-300 hover:border-gray-400 hover:bg-surface active:scale-95 sm:w-auto"
+                ? "inline-flex h-10 items-center justify-center rounded-md border border-accent bg-accent px-4 text-sm font-medium text-white transition-colors duration-200 active:scale-95 sm:w-auto"
+                : "inline-flex h-10 items-center justify-center rounded-md border border-gray-300 bg-white px-4 text-sm font-medium text-gray-600 transition-colors duration-200 hover:border-gray-400 hover:bg-surface active:scale-95 sm:w-auto"
             }
           >
             {cat}

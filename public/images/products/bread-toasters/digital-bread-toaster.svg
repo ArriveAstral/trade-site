@@ -1,9 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="#FAFAFA"/>
-<ellipse cx="200" cy="275" rx="110" ry="8" fill="rgba(0,0,0,0.07)"/>
-<rect x="80" y="85" width="240" height="130" rx="8" fill="#D0D0D0" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
-<rect x="140" y="77" width="35" height="35" rx="4" fill="#999" opacity="0.25"/>
-<rect x="225" y="77" width="35" height="35" rx="4" fill="#999" opacity="0.25"/>
-<rect x="255" y="120" width="6" height="55" rx="3" fill="#888" opacity="0.35"/>
-<circle cx="120" cy="180" r="10" fill="#888" opacity="0.3"/>
-<rect x="160" y="110" width="80" height="35" rx="4" fill="#2D2D2D"/>
-<rect x="168" y="120" width="20" height="15" rx="2" fill="#00E5FF" opacity="0.8"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" width="640" height="500">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#faf7f2"/><stop offset="50%" stop-color="#f2ede5"/><stop offset="100%" stop-color="#e8e2d8"/>
+    </linearGradient>
+    <linearGradient id="topGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e2d8"/><stop offset="100%" stop-color="#ddd6ca"/>
+    </linearGradient>
+    <linearGradient id="breadFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2d48a"/><stop offset="25%" stop-color="#eac870"/><stop offset="70%" stop-color="#d4a843"/><stop offset="100%" stop-color="#c4952e"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e4dc"/><stop offset="35%" stop-color="#f5f2ec"/><stop offset="55%" stop-color="#d0ccc4"/><stop offset="100%" stop-color="#b0aca4"/>
+    </linearGradient>
+    <radialGradient id="slotInner" cx="0.5" cy="0" r="0.8"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="100%" stop-color="#0a0a0a"/></radialGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="45%" stop-color="rgba(255,255,255,0)"/><stop offset="50%" stop-color="rgba(255,255,255,0.3)"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4.2s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="drop" x="-6%" y="-2%" width="112%" height="112%"><feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.10"/></filter>
+    <filter id="soft" x="-8%" y="-4%" width="116%" height="116%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/></filter>
+  </defs>
+
+  <ellipse cx="320" cy="435" rx="190" ry="15" fill="rgba(0,0,0,0.07)"/>
+  <rect x="138" y="398" width="16" height="8" rx="3" fill="#a09890"/>
+  <rect x="486" y="398" width="16" height="8" rx="3" fill="#a09890"/>
+
+  <rect x="100" y="130" width="440" height="275" rx="28" fill="url(#bodyGrad)" filter="url(#drop)"/>
+  <rect x="108" y="374" width="424" height="5" rx="2" fill="url(#chrome)" opacity="0.6"/>
+  <rect x="105" y="135" width="430" height="265" rx="24" fill="url(#sheen)" pointer-events="none"/>
+  <rect x="115" y="120" width="410" height="28" rx="10" fill="url(#topGrad)"/>
+
+  <!-- 2 slots -->
+  <rect x="178" y="92" width="66" height="56" rx="10" fill="url(#slotInner)"/>
+  <rect x="396" y="92" width="66" height="56" rx="10" fill="url(#slotInner)"/>
+
+  <!-- 2 bread slices -->
+  <g><path d="M191 148 L191 118 Q191 76 211 72 Q231 76 231 118 L231 148 Z" fill="url(#breadFace)"/><path d="M198 112 Q211 80 224 112" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3"/><path d="M190 118 Q211 74 232 118" fill="none" stroke="#b8802a" stroke-width="1.5" opacity="0.4"/></g>
+  <g><path d="M409 148 L409 118 Q409 76 429 72 Q449 76 449 118 L449 148 Z" fill="url(#breadFace)"/><path d="M416 112 Q429 80 442 112" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3"/><path d="M408 118 Q429 74 450 118" fill="none" stroke="#b8802a" stroke-width="1.5" opacity="0.4"/></g>
+
+  <!-- Lever -->
+  <rect x="515" y="190" width="8" height="100" rx="4" fill="#555"/>
+  <rect x="518" y="193" width="2" height="94" rx="1" fill="#333"/>
+  <rect x="505" y="185" width="28" height="22" rx="6" fill="url(#chrome)" filter="url(#soft)"/>
+  <rect x="510" y="189" width="18" height="4" rx="2" fill="rgba(255,255,255,0.4)"/>
+
+  <!-- Digital display panel -->
+  <rect x="180" y="290" width="280" height="60" rx="10" fill="#1a1a1e"/>
+  <!-- Display screen -->
+  <rect x="195" y="300" width="150" height="40" rx="5" fill="#0d1a0d"/>
+  <text x="270" y="328" text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold" fill="#4dff4d" opacity="0.85">02:45<animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/></text>
+  <text x="205" y="316" font-family="system-ui, sans-serif" font-size="7" fill="#2d7a2d">TOAST LEVEL</text>
+
+  <!-- Touch buttons -->
+  <rect x="355" y="300" width="22" height="18" rx="4" fill="#333"/>
+  <text x="366" y="314" text-anchor="middle" font-family="monospace" font-size="12" fill="#aaa">+</text>
+  <rect x="380" y="300" width="22" height="18" rx="4" fill="#333"/>
+  <text x="391" y="314" text-anchor="middle" font-family="monospace" font-size="12" fill="#aaa">-</text>
+
+  <!-- Mode indicators -->
+  <rect x="355" y="325" width="16" height="16" rx="3" fill="#e88"/><text x="363" y="337" text-anchor="middle" font-family="system-ui, sans-serif" font-size="6" fill="#fff">B</text>
+  <rect x="375" y="325" width="16" height="16" rx="3" fill="#333"/><text x="383" y="337" text-anchor="middle" font-family="system-ui, sans-serif" font-size="6" fill="#888">D</text>
+  <rect x="395" y="325" width="16" height="16" rx="3" fill="#333"/><text x="403" y="337" text-anchor="middle" font-family="system-ui, sans-serif" font-size="6" fill="#888">R</text>
+
+  <!-- Power LED -->
+  <circle cx="430" cy="333" r="3.5" fill="#3cb878"><animate attributeName="opacity" values="0.25;1;0.25" dur="2s" repeatCount="indefinite"/></circle>
+
+  <!-- Steam -->
+  <g opacity="0.4">
+    <path d="M200 72 Q198 52 203 35" fill="none" stroke="#bbb" stroke-width="2.2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.5;0" dur="2.3s" begin="0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="-2 -16" dur="2.3s" begin="0s" repeatCount="indefinite"/></path>
+    <path d="M211 70 Q214 50 210 32" fill="none" stroke="#bbb" stroke-width="2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.45;0" dur="2.6s" begin="0.65s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="3 -18" dur="2.6s" begin="0.65s" repeatCount="indefinite"/></path>
+    <path d="M420 72 Q418 52 423 35" fill="none" stroke="#bbb" stroke-width="2.2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.5;0" dur="2.4s" begin="0.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="2 -15" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></path>
+    <path d="M431 70 Q434 50 430 32" fill="none" stroke="#bbb" stroke-width="2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.45;0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="-3 -17" dur="2.5s" begin="0.9s" repeatCount="indefinite"/></path>
+  </g>
+
+  <text x="320" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="500" letter-spacing="4" fill="#c5bfb2">DIGITAL</text>
+</svg>

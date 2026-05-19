@@ -1,5 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="#FAFAFA"/>
-<ellipse cx="200" cy="278" rx="99" ry="6" fill="rgba(0,0,0,0.07)"/>
-<rect x="90" y="150" width="220" height="55" rx="5" fill="#E8E5DD" stroke="#D5D2CA" stroke-width="0.5"/>
-<rect x="112" y="95" width="176" height="55" rx="6" fill="#B0AFA5" opacity="0.4"/>
-<rect x="310" y="135" width="14" height="8" rx="4" fill="#666" opacity="0.35"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" width="640" height="500">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#faf7f2"/><stop offset="50%" stop-color="#f2ede5"/><stop offset="100%" stop-color="#e8e2d8"/>
+    </linearGradient>
+    <linearGradient id="plateGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3a3a"/><stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e4dc"/><stop offset="35%" stop-color="#f5f2ec"/><stop offset="55%" stop-color="#d0ccc4"/><stop offset="100%" stop-color="#b0aca4"/>
+    </linearGradient>
+    <radialGradient id="eggWhite" cx="0.45" cy="0.45" r="0.6"><stop offset="0%" stop-color="#fefefe"/><stop offset="100%" stop-color="#f0ece4"/></radialGradient>
+    <radialGradient id="eggYolk" cx="0.4" cy="0.35" r="0.5"><stop offset="0%" stop-color="#f9a825"/><stop offset="60%" stop-color="#f57c00"/><stop offset="100%" stop-color="#e65100"/></radialGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="45%" stop-color="rgba(255,255,255,0)"/><stop offset="50%" stop-color="rgba(255,255,255,0.3)"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4.5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="drop" x="-6%" y="-2%" width="112%" height="114%"><feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.10"/></filter>
+    <filter id="soft" x="-8%" y="-4%" width="116%" height="116%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/></filter>
+  </defs>
+
+  <ellipse cx="320" cy="450" rx="210" ry="15" fill="rgba(0,0,0,0.07)"/>
+  <rect x="125" y="420" width="16" height="8" rx="3" fill="#a09890"/>
+  <rect x="499" y="420" width="16" height="8" rx="3" fill="#a09890"/>
+
+  <rect x="100" y="155" width="440" height="270" rx="28" fill="url(#bodyGrad)" filter="url(#drop)"/>
+  <rect x="110" y="395" width="420" height="5" rx="2" fill="url(#chrome)" opacity="0.5"/>
+  <rect x="108" y="160" width="424" height="255" rx="24" fill="url(#sheen)" pointer-events="none"/>
+  <rect x="112" y="148" width="416" height="20" rx="6" fill="url(#chrome)" opacity="0.5"/>
+
+  <!-- Large cooking plate -->
+  <rect x="130" y="178" width="380" height="115" rx="10" fill="#1a1a1a"/>
+  <rect x="138" y="185" width="364" height="100" rx="6" fill="url(#plateGrad)"/>
+  <!-- Dual heating rings -->
+  <ellipse cx="230" cy="235" rx="60" ry="45" fill="none" stroke="#4a4a4a" stroke-width="1.2" opacity="0.45"/>
+  <ellipse cx="410" cy="235" rx="60" ry="45" fill="none" stroke="#4a4a4a" stroke-width="1.2" opacity="0.45"/>
+
+  <!-- Egg 1 -->
+  <g><path d="M210 218 Q195 232 202 252 Q210 266 230 264 Q248 262 252 246 Q256 230 245 220 Q232 212 210 218 Z" fill="url(#eggWhite)" filter="url(#soft)"/><ellipse cx="228" cy="240" rx="13" ry="12" fill="url(#eggYolk)"/><ellipse cx="224" cy="236" rx="4.5" ry="3.5" fill="rgba(255,255,255,0.3)"/></g>
+  <!-- Egg 2 -->
+  <g><path d="M385 220 Q373 233 378 250 Q384 263 402 262 Q420 260 424 246 Q428 232 418 222 Q406 216 385 220 Z" fill="url(#eggWhite)" filter="url(#soft)"/><ellipse cx="400" cy="240" rx="11" ry="10" fill="url(#eggYolk)"/><ellipse cx="397" cy="236" rx="3.5" ry="3" fill="rgba(255,255,255,0.3)"/></g>
+
+  <!-- Bacon strips -->
+  <path d="M160 260 Q170 254 180 258 Q190 262 200 256" fill="none" stroke="#c4745a" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Warming zone -->
+  <rect x="125" y="305" width="390" height="35" rx="6" fill="#f2ede5"/>
+  <rect x="380" y="310" width="8" height="3" rx="1" fill="#e07060" opacity="0.7"/>
+  <rect x="392" y="310" width="8" height="3" rx="1" fill="#e07060" opacity="0.5"/>
+  <rect x="404" y="310" width="8" height="3" rx="1" fill="#e07060" opacity="0.3"/>
+
+  <!-- Toast in warming zone -->
+  <path d="M200 315 L200 305 Q200 297 210 296 Q220 297 220 305 L220 315 Z" fill="#e8c87a" opacity="0.7"/>
+
+  <!-- Controls -->
+  <rect x="180" y="348" width="280" height="40" rx="7" fill="rgba(0,0,0,0.025)"/>
+  <circle cx="225" cy="368" r="13" fill="#4a4a4a" filter="url(#soft)"/><circle cx="225" cy="368" r="8" fill="#5a5a5a"/><line x1="225" y1="368" x2="225" y2="361" stroke="#ddd" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="285" cy="368" r="13" fill="#4a4a4a" filter="url(#soft)"/><circle cx="285" cy="368" r="8" fill="#5a5a5a"/><line x1="285" y1="368" x2="285" y2="361" stroke="#ddd" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="345" cy="368" r="9" fill="#d9534f"/><circle cx="345" cy="368" r="5.5" fill="#e8655c"/><circle cx="343" cy="366" r="2" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="410" cy="368" r="4" fill="#3cb878"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.2s" repeatCount="indefinite"/></circle>
+
+  <!-- Heat shimmer -->
+  <g opacity="0.32">
+    <path d="M210 170 Q218 158 226 170" fill="none" stroke="#999" stroke-width="2.3" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.55;0" dur="2s" begin="0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="6 -12" dur="2s" begin="0s" repeatCount="indefinite"/></path>
+    <path d="M260 170 Q268 155 276 170" fill="none" stroke="#999" stroke-width="2.5" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.55;0" dur="2.3s" begin="0.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="-4 -14" dur="2.3s" begin="0.5s" repeatCount="indefinite"/></path>
+    <path d="M380 170 Q388 156 396 170" fill="none" stroke="#999" stroke-width="2.2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.5;0" dur="2.1s" begin="1s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="5 -13" dur="2.1s" begin="1s" repeatCount="indefinite"/></path>
+    <path d="M440 172 Q448 158 456 172" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.45;0" dur="2.4s" begin="1.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="-3 -11" dur="2.4s" begin="1.5s" repeatCount="indefinite"/></path>
+  </g>
+
+  <text x="320" y="298" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="500" letter-spacing="3" fill="#c5bfb2">FAMILY</text>
+</svg>

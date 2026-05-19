@@ -1,8 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="#FAFAFA"/>
-<ellipse cx="200" cy="275" rx="110" ry="8" fill="rgba(0,0,0,0.07)"/>
-<rect x="80" y="85" width="240" height="130" rx="8" fill="#DCDCDC" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
-<rect x="98" y="79" width="28" height="32" rx="3" fill="#999" opacity="0.2"/>
-<rect x="136" y="79" width="28" height="32" rx="3" fill="#999" opacity="0.2"/>
-<rect x="174" y="79" width="28" height="32" rx="3" fill="#999" opacity="0.2"/>
-<rect x="212" y="79" width="28" height="32" rx="3" fill="#999" opacity="0.2"/>
-<rect x="92" y="175" width="80" height="10" rx="2" fill="#888" opacity="0.25"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" width="640" height="500">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#faf7f2"/><stop offset="50%" stop-color="#f2ede5"/><stop offset="100%" stop-color="#e8e2d8"/>
+    </linearGradient>
+    <linearGradient id="topGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e2d8"/><stop offset="100%" stop-color="#ddd6ca"/>
+    </linearGradient>
+    <linearGradient id="breadFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2d48a"/><stop offset="25%" stop-color="#eac870"/><stop offset="70%" stop-color="#d4a843"/><stop offset="100%" stop-color="#c4952e"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e4dc"/><stop offset="35%" stop-color="#f5f2ec"/><stop offset="55%" stop-color="#d0ccc4"/><stop offset="100%" stop-color="#b0aca4"/>
+    </linearGradient>
+    <radialGradient id="slotInner" cx="0.5" cy="0" r="0.8">
+      <stop offset="0%" stop-color="#1a1a1a"/><stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="45%" stop-color="rgba(255,255,255,0)"/><stop offset="50%" stop-color="rgba(255,255,255,0.3)"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4.2s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="drop" x="-6%" y="-2%" width="112%" height="112%"><feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.10"/></filter>
+    <filter id="soft" x="-8%" y="-4%" width="116%" height="116%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/></filter>
+  </defs>
+
+  <ellipse cx="320" cy="435" rx="210" ry="16" fill="rgba(0,0,0,0.07)"/>
+  <rect x="100" y="398" width="16" height="8" rx="3" fill="#a09890"/>
+  <rect x="524" y="398" width="16" height="8" rx="3" fill="#a09890"/>
+
+  <rect x="80" y="130" width="480" height="275" rx="28" fill="url(#bodyGrad)" filter="url(#drop)"/>
+  <rect x="88" y="374" width="464" height="5" rx="2" fill="url(#chrome)" opacity="0.6"/>
+  <rect x="85" y="135" width="470" height="265" rx="24" fill="url(#sheen)" pointer-events="none"/>
+  <rect x="95" y="120" width="450" height="28" rx="10" fill="url(#topGrad)"/>
+
+  <!-- 4 slots -->
+  <rect x="115" y="92" width="66" height="56" rx="10" fill="url(#slotInner)"/>
+  <rect x="207" y="92" width="66" height="56" rx="10" fill="url(#slotInner)"/>
+  <rect x="367" y="92" width="66" height="56" rx="10" fill="url(#slotInner)"/>
+  <rect x="459" y="92" width="66" height="56" rx="10" fill="url(#slotInner)"/>
+
+  <!-- 4 bread slices -->
+  <g><path d="M128 148 L128 118 Q128 76 148 72 Q168 76 168 118 L168 148 Z" fill="url(#breadFace)"/><path d="M135 112 Q148 80 161 112" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3"/><path d="M127 118 Q148 74 169 118" fill="none" stroke="#b8802a" stroke-width="1.5" opacity="0.4"/></g>
+  <g><path d="M220 148 L220 118 Q220 76 240 72 Q260 76 260 118 L260 148 Z" fill="url(#breadFace)"/><path d="M227 112 Q240 80 253 112" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3"/><path d="M219 118 Q240 74 261 118" fill="none" stroke="#b8802a" stroke-width="1.5" opacity="0.4"/></g>
+  <g><path d="M380 148 L380 118 Q380 76 400 72 Q420 76 420 118 L420 148 Z" fill="url(#breadFace)"/><path d="M387 112 Q400 80 413 112" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3"/><path d="M379 118 Q400 74 421 118" fill="none" stroke="#b8802a" stroke-width="1.5" opacity="0.4"/></g>
+  <g><path d="M472 148 L472 118 Q472 76 492 72 Q512 76 512 118 L512 148 Z" fill="url(#breadFace)"/><path d="M479 112 Q492 80 505 112" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3"/><path d="M471 118 Q492 74 513 118" fill="none" stroke="#b8802a" stroke-width="1.5" opacity="0.4"/></g>
+
+  <!-- Lever slot + knob -->
+  <rect x="530" y="190" width="8" height="100" rx="4" fill="#555"/>
+  <rect x="533" y="193" width="2" height="94" rx="1" fill="#333"/>
+  <rect x="520" y="185" width="28" height="22" rx="6" fill="url(#chrome)" filter="url(#soft)"/>
+  <rect x="525" y="189" width="18" height="4" rx="2" fill="rgba(255,255,255,0.4)"/>
+
+  <!-- Controls -->
+  <rect x="180" y="295" width="280" height="55" rx="10" fill="rgba(0,0,0,0.03)"/>
+  <circle cx="230" cy="322" r="16" fill="#444" filter="url(#soft)"/><circle cx="230" cy="322" r="10" fill="#555"/><line x1="230" y1="322" x2="230" y2="312" stroke="#ddd" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="295" cy="322" r="11" fill="#d3544d"/><circle cx="295" cy="322" r="7" fill="#e8655c"/><circle cx="293" cy="320" r="2.5" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="355" cy="322" r="9" fill="#555"/>
+  <circle cx="400" cy="322" r="9" fill="#555"/>
+  <circle cx="440" cy="322" r="4" fill="#3cb878"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/></circle>
+  <circle cx="440" cy="322" r="8" fill="#3cb878" opacity="0.1"><animate attributeName="opacity" values="0.03;0.16;0.03" dur="2.2s" repeatCount="indefinite"/><animate attributeName="r" values="7;12;7" dur="2.2s" repeatCount="indefinite"/></circle>
+
+  <!-- Steam -->
+  <g opacity="0.45">
+    <path d="M145 72 Q142 52 147 32 Q150 15 146 0" fill="none" stroke="#bbb" stroke-width="2.3" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.55;0" dur="2.4s" begin="0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="-3 -18" dur="2.4s" begin="0s" repeatCount="indefinite"/></path>
+    <path d="M240 70 Q243 50 238 32 Q235 15 240 0" fill="none" stroke="#bbb" stroke-width="2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.5;0" dur="2.7s" begin="0.6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="2 -20" dur="2.7s" begin="0.6s" repeatCount="indefinite"/></path>
+    <path d="M395 70 Q392 52 396 34 Q399 16 395 0" fill="none" stroke="#bbb" stroke-width="2.3" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.5;0" dur="2.5s" begin="0.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="3 -16" dur="2.5s" begin="0.3s" repeatCount="indefinite"/></path>
+    <path d="M490 72 Q493 50 488 32 Q485 15 490 0" fill="none" stroke="#bbb" stroke-width="2" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.45;0" dur="2.6s" begin="1s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" from="0 0" to="-4 -18" dur="2.6s" begin="1s" repeatCount="indefinite"/></path>
+  </g>
+
+  <text x="320" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="4" fill="#c5bfb2">TOASTER</text>
+</svg>
